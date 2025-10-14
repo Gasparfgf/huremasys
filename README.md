@@ -83,9 +83,7 @@ Once deployed:
 - Test endpoint: http://localhost:8080/huremasys/api/test
 
 Expected result :
-```txt
-{ "status": "ok" }
-```
+> { "status": "ok" }
 
 - Swagger / OpenAPI (coming soon) : http://localhost:8080/huremasys/api/openapi.json
 
@@ -116,7 +114,7 @@ Swagger UI (OpenAPI 3) will be available at: http://localhost:8080/huremasys/swa
 
 🎓 Profile : Software engineer — Développeur (Java) Full Stack
 
-🔗 GitHub : https://github.com/Gasparfgf
+🔗 GitHub : [Gasparfgf](https://github.com/Gasparfgf)
 
 LinkedIn : ...
 
