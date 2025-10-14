@@ -33,6 +33,7 @@ Huremasys aims to offer a simple, powerful, and secure solution for:
 
 ## Project structure
 
+```java
 huremasys/
 │
 ├── huremasys-backend/ # Code source Java Jakarta EE
@@ -43,7 +44,7 @@ huremasys/
 ├── docker-compose.yml # PostgreSQL service
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 
@@ -51,7 +52,7 @@ huremasys/
 
 ### 🔧 Prérequis
 
-- [Java JDK 21](https://adoptium.net/)
+- [Java JDK 21](https://www.oracle.com/java/technologies/downloads/)
 - [Maven 3.9+](https://maven.apache.org/)
 - [Docker & Docker Compose](https://www.docker.com/)
 - [Eclipse IDE for Enterprise Java Developers or another IDE](https://eclipse.org/downloads/)
@@ -82,7 +83,7 @@ Once deployed:
 - Test endpoint: http://localhost:8080/huremasys/api/test
 
 Expected result :
-```bash
+```txt
 { "status": "ok" }
 ```
 
@@ -112,15 +113,18 @@ Swagger UI (OpenAPI 3) will be available at: http://localhost:8080/huremasys/swa
 ## 🧑‍💻 Auteur
 
 💼 Name : [Gaspar da Rosa Francisco]
+
 🎓 Profile : Software engineer — Développeur (Java) Full Stack
+
 🔗 GitHub : https://github.com/Gasparfgf
+
 LinkedIn : ...
 
 ---
 
 ## Autres
 
-- Development roadmap
+- [Development roadmap](https://github.com/Gasparfgf/huremasys/blob/1-set-up-project-and-infrastructure/huremasys-backend/doc/development.md)
 
 
 
