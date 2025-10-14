@@ -12,7 +12,7 @@ import jakarta.ws.rs.core.Response;
 /**
  * 
  */
-@Path("/health")
+@Path("/test")
 public class TestResource {
 
 	@GET
