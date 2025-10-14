@@ -1,24 +1,81 @@
-# Compiled class file
-*.class
+# ============================================================
+# 🌐 HuremaSys - Backend (Eclipse + Maven + Java + Docker)
+# ============================================================
 
-# Log file
-*.log
+### Eclipse IDE ###
+humerasys-backend/.metadata/
+humerasys-backend/*.tmp
+humerasys-backend/*.bak
+humerasys-backend/*.swp
+humerasys-backend/*~.nib
+humerasys-backend/local.properties
+humerasys-backend/.settings/
+humerasys-backend/.loadpath
+humerasys-backend/.recommenders/
 
-# BlueJ files
-*.ctxt
+# Eclipse project files
+humerasys-backend/.classpath
+humerasys-backend/.project
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+### Java ###
+humerasys-backend/*.class
+humerasys-backend/*.jar
+humerasys-backend/*.war
+humerasys-backend/*.ear
+humerasys-backend/*.nar
+humerasys-backend/*.zip
+humerasys-backend/*.tar.gz
+humerasys-backend/*.rar
+humerasys-backend/hs_err_pid*
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+### Maven ###
+humerasys-backend/target/
+humerasys-backend/pom.xml.tag
+humerasys-backend/pom.xml.releaseBackup
+humerasys-backend/pom.xml.versionsBackup
+humerasys-backend/pom.xml.next
+humerasys-backend/release.properties
+humerasys-backend/dependency-reduced-pom.xml
+humerasys-backend/buildNumber.properties
+humerasys-backend/.mvn/timing.properties
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Ignore wrapper files (if Maven Wrapper, remove these lines)
+humerasys-backend/.mvn/
+humerasys-backend/mvnw
+humerasys-backend/mvnw.cmd
+
+### Logs ###
+humerasys-backend/*.log
+humerasys-backend/logs/
+humerasys-backend/*.out
+
+### IntelliJ IDEA ###
+humerasys-backend/.idea/
+*humerasys-backend/.iml
+humerasys-backend/out/
+
+### OS generated files ###
+humerasys-backend/.DS_Store
+humerasys-backend/Thumbs.db
+humerasys-backend/ehthumbs.db
+humerasys-backend/Desktop.ini
+
+### Docker ###
+# PostgreSQL data volumes
+humerasys-backend/pgdata/
+humerasys-backend/docker-compose.override.yml
+humerasys-backend/*.env
+
+### Temporary files ###
+humerasys-backend/tmp/
+humerasys-backend/temp/
+humerasys-backend/*.bak
+humerasys-backend/*.swp
+
+### Serveur local ###
+humerasys-backend/*.deploy/
+humerasys-backend/*.deployed/
+humerasys-backend/*.undeployed/
+humerasys-backend/*.failed/
+humerasys-backend/*.log
+
