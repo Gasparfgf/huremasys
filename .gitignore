@@ -12,6 +12,15 @@ humerasys-backend/local.properties
 humerasys-backend/.settings/
 humerasys-backend/.loadpath
 humerasys-backend/.recommenders/
+*.pydevproject
+.project
+.metadata
+*.tmp
+*.bak
+*.swp
+*~.nib
+.local
+.settings/
 
 # Eclipse project files
 humerasys-backend/.classpath
@@ -38,6 +47,12 @@ humerasys-backend/release.properties
 humerasys-backend/dependency-reduced-pom.xml
 humerasys-backend/buildNumber.properties
 humerasys-backend/.mvn/timing.properties
+target/
+*.class
+*.war
+*.ear
+*.jar
+*.log
 
 # Ignore wrapper files (if Maven Wrapper, remove these lines)
 humerasys-backend/.mvn/
@@ -79,3 +94,10 @@ humerasys-backend/*.undeployed/
 humerasys-backend/*.failed/
 humerasys-backend/*.log
 
+.classpath
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+.env

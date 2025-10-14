@@ -13,24 +13,72 @@
   <url>http://www.example.com</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jakartaee.version>11.0.0-M1</jakartaee.version>
+    <junit.version>5.11.2</junit.version>
+    <hibernate.version>6.6.7.Final</hibernate.version>
+    <log4j.version>2.1.0-alpha1</log4j.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <postegresql.version>42.7.5</postegresql.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <swagger.version>2.2.22</swagger.version>
   </properties>
 
   <dependencies>
+  	<!-- Jakarta EE API -->
+  	<dependency>
+  		<groupId>jakarta.platform</groupId>
+  		<artifactId>jakarta.jakartaee-api</artifactId>
+  		<version>${jakartaee.version}</version>
+  	</dependency>
+  	
+  	<!-- Hibernate -->
+  	<dependency>
+  		<groupId>org.hibernate.orm</groupId>
+  		<artifactId>hibernate-core</artifactId>
+  		<version>${hibernate.version}</version>
+  	</dependency>
+  	
+  	<!-- PostgreSQL Driver -->
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.7.1</version>
-      <scope>test</scope>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${postegresql.version}</version>
+    </dependency>
+
+    <!-- Swagger/OpenAPI -->
+    <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-jaxrs2</artifactId>
+        <version>${swagger.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-params</artifactId>
-      <version>5.7.1</version>
-      <scope>test</scope>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-jaxrs2-jakarta</artifactId>
+        <version>${swagger.version}</version>
     </dependency>
+
+    <!-- Logging -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>${log4j.version}</version>
+    </dependency>
+  	
+  	<!-- JUnit -->
+    <dependency>
+    	<groupId>org.junit.jupiter</groupId>
+    	<artifactId>junit-jupiter-engine</artifactId>
+	    <version>${junit.version}</version>
+	    <scope>test</scope>
+    </dependency>
+    <dependency>
+      	<groupId>org.junit.jupiter</groupId>
+      	<artifactId>junit-jupiter-params</artifactId>
+      	<version>${junit.version}</version>
+      	<scope>test</scope>
+    </dependency>
+    
   </dependencies>
 
   <build>
@@ -41,5 +89,6 @@
         <version>3.0.0-M5</version>
       </plugin>
     </plugins>
+    <finalName>huremasys-backend</finalName>
   </build>
 </project>
