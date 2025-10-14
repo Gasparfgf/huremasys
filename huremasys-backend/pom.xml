@@ -10,7 +10,7 @@
   <packaging>war</packaging>
 
   <name>huremasys-backend</name>
-  <url>http://www.example.com</url>
+  <url>https://github.com/Gasparfgf/huremasys/tree/main/huremasys-backend</url>
 
   <properties>
     <jakartaee.version>11.0.0-M1</jakartaee.version>
