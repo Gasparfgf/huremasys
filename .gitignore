@@ -101,3 +101,7 @@ humerasys-backend/*.log
 Thumbs.db
 
 .env
+
+# Server
+payara
+payara/*

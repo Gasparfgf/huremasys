@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.huremasys.config;
+package com.huremasys.app;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
