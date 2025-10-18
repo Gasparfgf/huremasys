@@ -41,6 +41,13 @@ huremasys/
 │ ├── pom.xml
 │ └── Dockerfile (coming soon)
 │
+├── bin/                   # Automation scripts
+│ ├── build-backend.sh     # Clean and build the project with Maven
+│ ├── stop-server.sh       # Stop Payara server
+│ ├── start-server.sh      # Start Payara server
+│ ├── deploy-backend.sh    # Deploy WAR on Payara
+| └── run-all.sh			  # Build, start server & deploy
+|
 ├── docker-compose.yml # PostgreSQL service
 ├── .gitignore
 └── README.md
@@ -55,7 +62,8 @@ huremasys/
 - [Java JDK 21](https://www.oracle.com/java/technologies/downloads/)
 - [Maven 3.9+](https://maven.apache.org/)
 - [Docker & Docker Compose](https://www.docker.com/)
-- [Eclipse IDE for Enterprise Java Developers or another IDE](https://eclipse.org/downloads/)
+- An IDE. **Exemple**: [Eclipse IDE for Enterprise Java Developers or another IDE](https://eclipse.org/downloads/)
+- [Payara Server 6 installed (payara/ folder at the root of the project)](https://payara.fish/downloads/payara-platform-community-edition/)
 
 ---
 
@@ -66,17 +74,39 @@ docker-compose up -d
 ```
 This launches a container named huremasys_db (port 5432).
 
-Consider the following informations:
-- DB name: huremasys
-User: huremasys
-Password: huremasyspwd
+Verify container
+
+```bash
+docker ps
+```
+
+Stop container
+
+```bash
+docker-compose down
+```
 
 ### Compile and run the backend
+
+1. If it's for the _first time_
+
 ```bash
-cd huremasys-backend
-mvn clean install
+./run-all.sh	# from project root > bin
 ```
-Then deploy the .war to your Jakarta EE application server.
+
+2. Not the _first time_
+
+Build Maven - Compile and package the application
+
+```bash
+./build-backend.sh	# from project root > bin
+```
+
+Then deploy the .war to Jakarta EE application server.
+
+```bash
+./deploy-backend.sh	# from project root > bin
+```
 
 Once deployed:
 
@@ -86,6 +116,8 @@ Expected result :
 > { "status": "ok" }
 
 - Swagger / OpenAPI (coming soon) : http://localhost:8080/huremasys/api/openapi.json
+
+> If you have problems with server, check this [document](https://github.com/Gasparfgf/huremasys/blob/main/huremasys-backend/doc/debug.md) please !
 
 ---
 
@@ -110,19 +142,18 @@ Swagger UI (OpenAPI 3) will be available at: http://localhost:8080/huremasys/swa
 
 ## 🧑‍💻 Auteur
 
-💼 Name : [Gaspar da Rosa Francisco]
+💼 Name : [Gaspar da Rosa Francisco](https://www.linkedin.com/in/gaspar-francisco-5a4639203/)
 
-🎓 Profile : Software engineer — Développeur (Java) Full Stack
+🎓 Profile : Software engineer — Full Stack Developer
 
 🔗 GitHub : [Gasparfgf](https://github.com/Gasparfgf)
 
-LinkedIn : ...
 
 ---
 
 ## Autres
 
-- [Development roadmap](https://github.com/Gasparfgf/huremasys/blob/1-set-up-project-and-infrastructure/huremasys-backend/doc/development.md)
+- [Development roadmap](https://github.com/Gasparfgf/huremasys/blob/main/huremasys-backend/doc/development.md)
 
 
 

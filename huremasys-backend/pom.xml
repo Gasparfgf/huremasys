@@ -32,8 +32,8 @@
     	<hibernate.version>6.6.7.Final</hibernate.version>
     	<log4j.version>2.23.1</log4j.version>
     	<lombok.version>1.18.34</lombok.version>
-    	<maven.compiler.source>17</maven.compiler.source>
-    	<maven.compiler.target>17</maven.compiler.target>
+    	<maven.compiler.source>21</maven.compiler.source>
+    	<maven.compiler.target>21</maven.compiler.target>
     	<postegresql.version>42.7.5</postegresql.version>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     	<swagger.version>2.2.22</swagger.version>
