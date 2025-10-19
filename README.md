@@ -64,7 +64,7 @@ huremasys/
 - [Docker & Docker Compose](https://www.docker.com/)
 - An IDE. **Exemple**: [Eclipse IDE for Enterprise Java Developers or another IDE](https://eclipse.org/downloads/)
 - [Payara Server 6 installed (payara/ folder at the root of the project)](https://payara.fish/downloads/payara-platform-community-edition/)
-- [Swagger-UI](https://github.com/swagger-api/swagger-ui/releases)
+- [Swagger-UI-v5.29.5 (2025-10-17)](https://github.com/swagger-api/swagger-ui/releases)
 
 ### 🐘 Start the PostgreSQL database
 
