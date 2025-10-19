@@ -115,7 +115,7 @@ Expected result :
 
 - Swagger / OpenAPI (coming soon) : http://localhost:8080/huremasys/api/openapi.json
 
-> If you have problems with server, check this [document](https://github.com/Gasparfgf/huremasys/blob/main/huremasys-backend/doc/debug.md) please !
+> If you have problems with server, check this [document](https://github.com/Gasparfgf/huremasys/blob/main/huremasys-backend/doc/DEBUG.md) please !
 
 ---
 
@@ -140,11 +140,11 @@ Swagger UI (OpenAPI 3) will be available at: http://localhost:8080/huremasys/swa
 
 ## 🧑‍💻 Auteur
 
-💼 Name : [Gaspar da Rosa Francisco](https://www.linkedin.com/in/gaspar-francisco-5a4639203/)
+💼 **Name** : Gaspar da Rosa Francisco
 
-🎓 Profile : Software engineer — Full Stack Developer
+🎓 **Profile** : [Software engineer — Full Stack Developer](https://www.linkedin.com/in/gaspar-francisco-5a4639203/)
 
-🔗 GitHub : [Gasparfgf](https://github.com/Gasparfgf)
+🔗 **GitHub** : [Gasparfgf](https://github.com/Gasparfgf)
 
 
 ---

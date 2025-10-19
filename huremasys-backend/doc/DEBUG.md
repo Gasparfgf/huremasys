@@ -29,8 +29,8 @@ Delete and recreate the domain (if corrupted)
 
 ## 🧑‍💻 Auteur
 
-💼 Name : [Gaspar da Rosa Francisco](https://www.linkedin.com/in/gaspar-francisco-5a4639203/)
+💼 **Name** : [Gaspar da Rosa Francisco](https://www.linkedin.com/in/gaspar-francisco-5a4639203/)
 
-🎓 Profile : Software engineer — Full Stack Developer
+🎓 **Profile** : Software engineer — Full Stack Developer
 
-🔗 GitHub : [Gasparfgf](https://github.com/Gasparfgf)
+🔗 **GitHub** : [Gasparfgf](https://github.com/Gasparfgf)
