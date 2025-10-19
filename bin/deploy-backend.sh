@@ -4,19 +4,34 @@
 # Description : Deploy application on Payara server
 # ===============================================
 
-#PAYARA_HOME="../payara"
-WAR_PATH="../../huremasys-backend/target/huremasys-backend.war"
+PAYARA_HOME="$HOME/eclipse-workspace/huremasys/payara"
+APP_NAME="huremasys-backend"
+WAR_PATH="$HOME/eclipse-workspace/huremasys/huremasys-backend/target/$APP_NAME.war"
+DOMAIN_NAME="domain1"
 
-cd "$(dirname "$0")/../payara/bin" || exit
+echo "Deploying the application on Server..."
 
-echo "==================================================================="
-echo "Déploiement du backend sur Payara..."
+if [ ! -f "$WAR_PATH" ]; then
+  	echo "The $WAR_PATH file was not found. Did you run build-backend.sh?"
+  	exit 1
+fi
 
-#"$PAYARA_HOME/bin/asadmin" undeploy huremasys-backend
-./asadmin undeploy huremasys-backend
+cd "$PAYARA_HOME/bin" || exit 1
 
-#"$PAYARA_HOME/bin/asadmin" deploy "$WAR_PATH"
+# Vérifie si le domaine est démarré
+if ! ./asadmin list-domains | grep "$DOMAIN_NAME" | grep -q "running"; then
+  	echo "Starting the domain $DOMAIN_NAME..."
+  	./asadmin start-domain "$DOMAIN_NAME" >/dev/null
+fi
+
+./asadmin undeploy "$APP_NAME" >/dev/null 2>&1
+
 ./asadmin deploy "$WAR_PATH"
 
-echo "Déploiement terminé : http://localhost:8080/huremasys-backend"
-
+if [ $? -eq 0 ]; then
+  echo "Successful deployment !"
+  echo "🌍 Application available on : http://localhost:8080/$APP_NAME"
+else
+  echo "Deployment failed. Check server.log for more information."
+  exit 1
+fi

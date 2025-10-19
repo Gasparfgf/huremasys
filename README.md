@@ -65,8 +65,6 @@ huremasys/
 - An IDE. **Exemple**: [Eclipse IDE for Enterprise Java Developers or another IDE](https://eclipse.org/downloads/)
 - [Payara Server 6 installed (payara/ folder at the root of the project)](https://payara.fish/downloads/payara-platform-community-edition/)
 
----
-
 ### 🐘 Démarrer la base de données PostgreSQL
 
 ```bash
