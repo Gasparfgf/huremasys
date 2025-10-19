@@ -23,7 +23,7 @@ Delete and recreate the domain (if corrupted)
 ./asadmin delete-domain domain1
 ./asadmin create-domain --adminport 4848 --instanceport 8080 domain1
 
-``
+```
 
 ---
 
