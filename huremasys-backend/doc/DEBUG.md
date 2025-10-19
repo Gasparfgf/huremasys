@@ -25,7 +25,6 @@ Delete and recreate the domain (if corrupted)
 
 ``
 
-
 ---
 
 ## 🧑‍💻 Auteur
