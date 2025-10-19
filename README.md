@@ -106,16 +106,21 @@ Then deploy the .war to Jakarta EE application server.
 ./deploy-backend.sh	# from project root > bin
 ```
 
+> If you have problems with server, check this [document](https://github.com/Gasparfgf/huremasys/blob/main/huremasys-backend/doc/DEBUG.md) please !
+
 Once deployed:
 
-- Test endpoint: http://localhost:8080/huremasys/api/test
+- Test endpoint: http://localhost:8080/huremasys/test
 
 Expected result :
 > { "status": "ok" }
 
-- Swagger / OpenAPI (coming soon) : http://localhost:8080/huremasys/api/openapi.json
+### Swagger / OpenAPI
 
-> If you have problems with server, check this [document](https://github.com/Gasparfgf/huremasys/blob/main/huremasys-backend/doc/DEBUG.md) please !
+Interactive API documentation is available via MicroProfile OpenAPI, integrated with Payara.
+
+- JSON specification: [http://localhost:8080/huremasys-backend/openapi](http://localhost:8080/huremasys-backend/openapi)
+- Swagger UI : [http://localhost:8080/huremasys-backend/openapi-ui](http://localhost:8080/huremasys-backend/openapi-ui)
 
 ---
 

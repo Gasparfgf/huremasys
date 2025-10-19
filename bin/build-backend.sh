@@ -4,13 +4,11 @@
 # Description : Clean + Build Maven in backend
 # ===============================================
 
-cd "$(dirname "$0")/../huremasys-backend" || exit
+cd "$(dirname "$0")/../huremasys-backend" || exit 1
 
 echo "================================================================="
 
 echo "Cleaning and building the Maven project..."
-
-cd "$(dirname "$0")/.." || exit 1
 
 if [ ! -f "pom.xml" ]; then
   	echo "No pom.xml file found. Are you in the correct folder ?"

@@ -28,15 +28,17 @@
 
   	<properties>
     	<jakartaee.version>10.0.0</jakartaee.version>
+    	<jakartaapi.version>3.1.0</jakartaapi.version>
     	<junit.version>5.11.2</junit.version>
     	<hibernate.version>6.6.7.Final</hibernate.version>
     	<log4j.version>2.23.1</log4j.version>
     	<lombok.version>1.18.34</lombok.version>
-    	<maven.compiler.source>21</maven.compiler.source>
-    	<maven.compiler.target>21</maven.compiler.target>
+    	<maven.compiler.source>17</maven.compiler.source>
+    	<maven.compiler.target>17</maven.compiler.target>
     	<postegresql.version>42.7.5</postegresql.version>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     	<swagger.version>2.2.22</swagger.version>
+    	<microprofile.version>4.1</microprofile.version>
   	</properties>
 
   	<dependencies>
@@ -46,6 +48,13 @@
   			<artifactId>jakarta.jakartaee-api</artifactId>
   			<version>${jakartaee.version}</version>
   			<scope>provided</scope>
+		</dependency>
+		<!-- Jakarta REST API -->
+		<dependency>
+		    <groupId>jakarta.ws.rs</groupId>
+		    <artifactId>jakarta.ws.rs-api</artifactId>
+		    <version>${jakartaapi.version}</version>
+		    <scope>provided</scope>
 		</dependency>
   	
   		<!-- Hibernate -->
@@ -68,11 +77,12 @@
         	<artifactId>swagger-jaxrs2-jakarta</artifactId>
         	<version>${swagger.version}</version>
     	</dependency>
-    	<!-- to generate OpenAPI doc automatically -->
+    	<!-- MicroProfile OpenAPI (Swagger) -->
 		<dependency>
-	    	<groupId>io.swagger.core.v3</groupId>
-	    	<artifactId>swagger-integration-jakarta</artifactId>
-	    	<version>${swagger.version}</version>
+		    <groupId>org.eclipse.microprofile.openapi</groupId>
+		    <artifactId>microprofile-openapi-api</artifactId>
+		    <version>4.1</version>
+		    <scope>provided</scope>
 		</dependency>
 
     	<!-- Logging -->
