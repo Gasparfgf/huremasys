@@ -2,125 +2,155 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.huremasys</groupId>
-  <artifactId>huremasys-backend</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+  	<groupId>com.huremasys</groupId>
+  	<artifactId>huremasys-backend</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<packaging>war</packaging>
 
-  <name>huremasys-backend</name>
-  <url>https://github.com/Gasparfgf/huremasys/tree/main/huremasys-backend</url>
+  	<name>huremasys-backend</name>
+  	<description>Backend for Human Resources Management System</description>
+  	<url>https://github.com/Gasparfgf/huremasys/tree/main/huremasys-backend</url>
+  	<inceptionYear>2025</inceptionYear>
+  	<developers>
+  		<developer>
+        	<name>Gaspar da Rosa Francisco</name>
+        	<organization>Independent</organization>
+        	<organizationUrl>https://github.com/Gasparfgf/</organizationUrl>
+    	</developer>
+  	</developers>
+  	<issueManagement>
+    	<system>GitHub</system>
+    	<url>https://github.com/Gasparfgf/huremasys/issues</url>
+    </issueManagement>
 
-  <properties>
-    <jakartaee.version>11.0.0-M1</jakartaee.version>
-    <junit.version>5.11.2</junit.version>
-    <hibernate.version>6.6.7.Final</hibernate.version>
-    <log4j.version>2.1.0-alpha1</log4j.version>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <postegresql.version>42.7.5</postegresql.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <swagger.version>2.2.22</swagger.version>
-  </properties>
 
-  <dependencies>
-  	<!-- Jakarta EE API -->
-  	<dependency>
-  		<groupId>jakarta.platform</groupId>
-  		<artifactId>jakarta.jakartaee-api</artifactId>
-  		<version>${jakartaee.version}</version>
-  	</dependency>
+  	<properties>
+    	<jakartaee.version>10.0.0</jakartaee.version>
+    	<junit.version>5.11.2</junit.version>
+    	<hibernate.version>6.6.7.Final</hibernate.version>
+    	<log4j.version>2.23.1</log4j.version>
+    	<lombok.version>1.18.34</lombok.version>
+    	<maven.compiler.source>21</maven.compiler.source>
+    	<maven.compiler.target>21</maven.compiler.target>
+    	<postegresql.version>42.7.5</postegresql.version>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<swagger.version>2.2.22</swagger.version>
+  	</properties>
+
+  	<dependencies>
+  		<!-- Jakarta EE API -->
+  		<dependency>
+  			<groupId>jakarta.platform</groupId>
+  			<artifactId>jakarta.jakartaee-api</artifactId>
+  			<version>${jakartaee.version}</version>
+  			<scope>provided</scope>
+		</dependency>
   	
-  	<!-- Hibernate -->
-  	<dependency>
-  		<groupId>org.hibernate.orm</groupId>
-  		<artifactId>hibernate-core</artifactId>
-  		<version>${hibernate.version}</version>
-  	</dependency>
+  		<!-- Hibernate -->
+  		<dependency>
+  			<groupId>org.hibernate.orm</groupId>
+  			<artifactId>hibernate-core</artifactId>
+  			<version>${hibernate.version}</version>
+  		</dependency>
   	
-  	<!-- PostgreSQL Driver -->
-    <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <version>${postegresql.version}</version>
-    </dependency>
+  		<!-- PostgreSQL Driver -->
+    	<dependency>
+        	<groupId>org.postgresql</groupId>
+        	<artifactId>postgresql</artifactId>
+        	<version>${postegresql.version}</version>
+    	</dependency>
 
-    <!-- Swagger/OpenAPI -->
-    <dependency>
-        <groupId>io.swagger.core.v3</groupId>
-        <artifactId>swagger-jaxrs2</artifactId>
-        <version>${swagger.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>io.swagger.core.v3</groupId>
-        <artifactId>swagger-jaxrs2-jakarta</artifactId>
-        <version>${swagger.version}</version>
-    </dependency>
+    	<!-- Swagger/OpenAPI -->
+    	<dependency>
+        	<groupId>io.swagger.core.v3</groupId>
+        	<artifactId>swagger-jaxrs2-jakarta</artifactId>
+        	<version>${swagger.version}</version>
+    	</dependency>
+    	<!-- to generate OpenAPI doc automatically -->
+		<dependency>
+	    	<groupId>io.swagger.core.v3</groupId>
+	    	<artifactId>swagger-integration-jakarta</artifactId>
+	    	<version>${swagger.version}</version>
+		</dependency>
 
-    <!-- Logging -->
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-simple</artifactId>
-        <version>${log4j.version}</version>
-    </dependency>
-  	
-  	<!-- JUnit -->
-    <dependency>
-    	<groupId>org.junit.jupiter</groupId>
-    	<artifactId>junit-jupiter-engine</artifactId>
-	    <version>${junit.version}</version>
-	    <scope>test</scope>
-    </dependency>
-    <dependency>
-      	<groupId>org.junit.jupiter</groupId>
-      	<artifactId>junit-jupiter-params</artifactId>
-      	<version>${junit.version}</version>
-      	<scope>test</scope>
-    </dependency>
+    	<!-- Logging -->
+    	<dependency>
+        	<groupId>org.apache.logging.log4j</groupId>
+        	<artifactId>log4j-core</artifactId>
+        	<version>${log4j.version}</version>
+    	</dependency>
+    	<dependency>
+        	<groupId>org.apache.logging.log4j</groupId>
+        	<artifactId>log4j-web</artifactId>
+        	<version>${log4j.version}</version>
+    	</dependency>
+
+
+		<!-- Lombok -->
+  		<dependency>
+        	<groupId>org.projectlombok</groupId>
+        	<artifactId>lombok</artifactId>
+        	<version>${lombok.version}</version>
+    	</dependency>
+
+  		<!-- JUnit -->
+    	<dependency>
+    		<groupId>org.junit.jupiter</groupId>
+    		<artifactId>junit-jupiter-engine</artifactId>
+	    	<version>${junit.version}</version>
+	    	<scope>test</scope>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.junit.jupiter</groupId>
+      		<artifactId>junit-jupiter-params</artifactId>
+      		<version>${junit.version}</version>
+      		<scope>test</scope>
+    	</dependency>
     
-  </dependencies>
+  	</dependencies>
 
-  <build>
-    <plugins>
-      <!-- Compiler -->
-      <plugin>
-        	<groupId>org.apache.maven.plugins</groupId>
-        	<artifactId>maven-compiler-plugin</artifactId>
-        	<version>3.10.1</version>
-        	<configuration>
-          		<source>${maven.compiler.source}</source>
-          		<target>${maven.compiler.target}</target>
-        	</configuration>
-      </plugin>
+  	<build>
+    	<plugins>
+	      	<!-- Compiler -->
+	      	<plugin>
+	        	<groupId>org.apache.maven.plugins</groupId>
+	        	<artifactId>maven-compiler-plugin</artifactId>
+	        	<version>3.10.1</version>
+	        	<configuration>
+	          		<source>${maven.compiler.source}</source>
+	          		<target>${maven.compiler.target}</target>
+	        	</configuration>
+	      	</plugin>
+	
+			<!-- WAR Plugin (corrigé) -->
+	      	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+		  		<artifactId>maven-war-plugin</artifactId>
+		  		<version>3.3.2</version>
+		  		<configuration>
+		    		<failOnMissingWebXml>false</failOnMissingWebXml>
+		  		</configuration>
+			</plugin>
+			
+	      	<!-- Unit Tests -->
+	      	<plugin>
+	        	<groupId>org.apache.maven.plugins</groupId>
+	        	<artifactId>maven-surefire-plugin</artifactId>
+	        	<version>3.0.0-M5</version>
+	      	</plugin>
 
-		<!-- WAR Plugin (corrigé) -->
-      <plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-	  		<artifactId>maven-war-plugin</artifactId>
-	  		<version>3.3.2</version>
-	  		<configuration>
-	    		<failOnMissingWebXml>false</failOnMissingWebXml>
-	  		</configuration>
-		</plugin>
-		
-      <!-- Unit Tests -->
-      <plugin>
-        	<groupId>org.apache.maven.plugins</groupId>
-        	<artifactId>maven-surefire-plugin</artifactId>
-        	<version>3.0.0-M5</version>
-      </plugin>
-
-    </plugins>
+    	</plugins>
     
-    <sourceDirectory>src/main/java</sourceDirectory>
-    <testSourceDirectory>src/test/java</testSourceDirectory>
-    <resources>
-        <resource>
-            <directory>src/main/resources</directory>
-        </resource>
-    </resources>
+    	<sourceDirectory>src/main/java</sourceDirectory>
+    	<testSourceDirectory>src/test/java</testSourceDirectory>
+    	<resources>
+        	<resource>
+            	<directory>src/main/resources</directory>
+        	</resource>
+    	</resources>
         
-    <finalName>huremasys-backend</finalName>
-  </build>
+    	<finalName>huremasys-backend</finalName>
+  	</build>
 </project>
