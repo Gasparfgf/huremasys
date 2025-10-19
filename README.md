@@ -57,15 +57,16 @@ huremasys/
 
 ## ⚙️ Installation & Configuration
 
-### 🔧 Prérequis
+### 🔧 Prerequisites
 
-- [Java JDK 21](https://www.oracle.com/java/technologies/downloads/)
+- [Java JDK 17](https://www.oracle.com/java/technologies/downloads/)
 - [Maven 3.9+](https://maven.apache.org/)
 - [Docker & Docker Compose](https://www.docker.com/)
 - An IDE. **Exemple**: [Eclipse IDE for Enterprise Java Developers or another IDE](https://eclipse.org/downloads/)
 - [Payara Server 6 installed (payara/ folder at the root of the project)](https://payara.fish/downloads/payara-platform-community-edition/)
+- [Swagger-UI](https://github.com/swagger-api/swagger-ui/releases)
 
-### 🐘 Démarrer la base de données PostgreSQL
+### 🐘 Start the PostgreSQL database
 
 ```bash
 docker-compose up -d
@@ -119,8 +120,8 @@ Expected result :
 
 Interactive API documentation is available via MicroProfile OpenAPI, integrated with Payara.
 
-- JSON specification: [http://localhost:8080/huremasys-backend/openapi](http://localhost:8080/huremasys-backend/openapi)
-- Swagger UI : [http://localhost:8080/huremasys-backend/openapi-ui](http://localhost:8080/huremasys-backend/openapi-ui)
+- [JSON specification](http://localhost:8080/huremasys-backend/openapi)
+- [Swagger UI](http://localhost:8080/huremasys-backend/openapi-ui)
 
 ---
 

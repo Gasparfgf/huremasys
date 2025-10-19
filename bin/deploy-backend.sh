@@ -4,10 +4,11 @@
 # Description : Deploy application on Payara server
 # ===============================================
 
-PAYARA_HOME="$HOME/eclipse-workspace/huremasys/payara"
 APP_NAME="huremasys-backend"
 WAR_PATH="$HOME/eclipse-workspace/huremasys/huremasys-backend/target/$APP_NAME.war"
 DOMAIN_NAME="domain1"
+
+echo "======================================================================================"
 
 echo "Deploying the application on Server..."
 
@@ -16,7 +17,7 @@ if [ ! -f "$WAR_PATH" ]; then
   	exit 1
 fi
 
-cd "$PAYARA_HOME/bin" || exit 1
+cd "$(dirname "$0")/../payara/bin" || exit 1
 
 # Vérifie si le domaine est démarré
 if ! ./asadmin list-domains | grep "$DOMAIN_NAME" | grep -q "running"; then
@@ -29,9 +30,9 @@ fi
 ./asadmin deploy "$WAR_PATH"
 
 if [ $? -eq 0 ]; then
-  echo "Successful deployment !"
-  echo "🌍 Application available on : http://localhost:8080/$APP_NAME"
+  	echo "Successful deployment !"
+  	echo "🌍 Application available on : http://localhost:8080/$APP_NAME"
 else
-  echo "Deployment failed. Check server.log for more information."
-  exit 1
+  	echo "Deployment failed. Check server.log for more information."
+  	exit 1
 fi
