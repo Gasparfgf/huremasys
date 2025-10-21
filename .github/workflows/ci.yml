@@ -1,0 +1,73 @@
+name: Build & Deploy Huremasys Backend
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Test Backend
+
+    steps:
+      # 1. Checkout du code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Java
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # 3. Build & Test
+      - name: Build with Maven
+        working-directory: ./huremasys-backend
+        run: mvn -B clean package
+
+      # 4. Save the artifact (.war)
+      - name: Upload WAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: huremasys-backend-war
+          path: ./huremasys-backend/target/huremasys-backend.war
+
+  # Deployment
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    name: Deploy to Payara Server
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download WAR artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: huremasys-backend-war
+
+      # Configuration via GitHub Secrets
+      - name: Deploy WAR to Payara
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+      - name: Deploy WAR to Remote Payara
+        run: |
+          echo "Connecting to ${{ secrets.SERVER_HOST }}..."
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+            echo 'Stopping Payara domain...'
+            ${PAYARA_PATH}/bin/asadmin stop-domain || true
+            echo 'Deploying new version...'
+            rm -f ${PAYARA_PATH}/glassfish/domains/domain1/autodeploy/huremasys-backend.war
+            cp /tmp/huremasys-backend.war ${PAYARA_PATH}/glassfish/domains/domain1/autodeploy/
+            echo 'Starting Payara domain...'
+            ${PAYARA_PATH}/bin/asadmin start-domain
+          "
+        env:
+          PAYARA_USER: ${{ secrets.PAYARA_USER }}
+          PAYARA_PASS: ${{ secrets.PAYARA_PASS }}
+
