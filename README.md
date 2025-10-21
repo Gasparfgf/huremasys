@@ -111,7 +111,7 @@ Then deploy the .war to Jakarta EE application server.
 
 Once deployed:
 
-- Test endpoint: http://localhost:8080/huremasys/test
+- Test endpoint: http://localhost:8080/huremasys/api/test
 
 Expected result :
 > { "status": "ok" }
@@ -120,8 +120,8 @@ Expected result :
 
 Interactive API documentation is available via MicroProfile OpenAPI, integrated with Payara.
 
-- [JSON specification](http://localhost:8080/huremasys-backend/openapi)
-- [Swagger UI](http://localhost:8080/huremasys-backend/openapi-ui)
+- [JSON specification](http://localhost:8080/huremasys-backend/api/openapi)
+- [Swagger UI](http://localhost:8080/huremasys-backend/api/swagger-ui)
 
 ---
 

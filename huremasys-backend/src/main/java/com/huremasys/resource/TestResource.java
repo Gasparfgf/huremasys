@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.huremasys.resource;
 
 import jakarta.ws.rs.GET;
@@ -10,7 +7,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 /**
- * 
+ * Test class resource.
  */
 @Path("/test")
 public class TestResource {
