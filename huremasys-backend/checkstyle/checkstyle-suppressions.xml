@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+    "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <!-- Suppress checks for generated code -->
+    <suppress checks=".*" files=".*[\\/]target[\\/].*"/>
+    <suppress checks=".*" files=".*[\\/]generated-sources[\\/].*"/>
+
+    <!-- Suppress checks for test files -->
+    <suppress checks="JavadocMethod" files=".*Test\.java$"/>
+    <suppress checks="JavadocType" files=".*Test\.java$"/>
+    <suppress checks="MagicNumber" files=".*Test\.java$"/>
+    <suppress checks="MethodLength" files=".*Test\.java$"/>
+
+    <!-- Suppress checks for DTOs and entities (often need public fields) -->
+    <suppress checks="VisibilityModifier" files=".*DTO\.java$"/>
+    <suppress checks="VisibilityModifier" files=".*Entity\.java$"/>
+    <suppress checks="MissingJavadocType" files=".*DTO\.java$"/>
+
+    <!-- Suppress checks for configuration classes -->
+    <suppress checks="HideUtilityClassConstructor" files=".*Config\.java$"/>
+    <suppress checks="HideUtilityClassConstructor" files=".*Configuration\.java$"/>
+
+    <!-- Suppress checks for Jakarta EE Application class -->
+    <suppress checks="HideUtilityClassConstructor" files=".*Application\.java$"/>
+
+    <!-- Suppress specific checks for Lombok annotated classes -->
+    <suppress checks="MissingJavadocMethod" files=".*" message=".*@Data.*"/>
+    <suppress checks="MissingJavadocMethod" files=".*" message=".*@Getter.*"/>
+    <suppress checks="MissingJavadocMethod" files=".*" message=".*@Setter.*"/>
+
+</suppressions>

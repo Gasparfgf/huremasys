@@ -35,22 +35,28 @@ Huremasys aims to offer a simple, powerful, and secure solution for:
 
 ```java
 huremasys/
-├── .github/
-│    └── workflows/
-│         └── ci.yml
+├──	huremasys-backend/
+│	├── .github/
+│	│    └── workflows/
+│	│         └── ci.yml
+│	│
+│	├── huremasys-backend/ # Code source Java Jakarta EE
+│	│ ├── src/
+│	│ ├── pom.xml
+│	│ └── Dockerfile (coming soon)
+│	│
+│	├── bin/                   # Automation scripts
+│	│ ├── build-backend.sh     # Clean and build the project with Maven
+│	│ ├── stop-server.sh       # Stop Payara server
+│	│ ├── start-server.sh      # Start Payara server
+│	│ ├── deploy-backend.sh    # Deploy WAR on Payara
+│	| └── run-all.sh			  # Build, start server & deploy
+│	|
+│	└──	checkstyle/
+│		├── checkstyle.xml                    # Main file
+│		└── checkstyle-suppressions.xml       # Deletion file
 │
-├── huremasys-backend/ # Code source Java Jakarta EE
-│ ├── src/
-│ ├── pom.xml
-│ └── Dockerfile (coming soon)
 │
-├── bin/                   # Automation scripts
-│ ├── build-backend.sh     # Clean and build the project with Maven
-│ ├── stop-server.sh       # Stop Payara server
-│ ├── start-server.sh      # Start Payara server
-│ ├── deploy-backend.sh    # Deploy WAR on Payara
-| └── run-all.sh			  # Build, start server & deploy
-|
 ├── docker-compose.yml # PostgreSQL service
 ├── .gitignore
 └── README.md

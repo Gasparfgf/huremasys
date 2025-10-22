@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+    <!-- Readable messages -->
+    <property name="severity" value="warning"/>
+    <property name="charset" value="UTF-8"/>
+
+    <!-- Standard coding -->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true"/>
+    </module>
+
+    <!-- Line Length -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+    </module>
+
+    <!-- File length checks -->
+    <module name="FileLength">
+        <property name="max" value="500"/>
+        <property name="fileExtensions" value="java"/>
+    </module>
+
+    <!-- Whitespace checks -->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true"/>
+    </module>
+
+    <!-- Package and class names -->
+    <module name="TreeWalker">
+        <module name="PackageName"/>
+        <module name="TypeName"/>
+        <module name="ConstantName"/>
+        <module name="MethodName"/>
+        <module name="ParameterName"/>
+
+        <!-- Gaps and indentations -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="4"/>
+        </module>
+
+        <!-- Own imports -->
+        <module name="UnusedImports"/>
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <module name="RedundantImport"/>
+
+        <!-- Whitespace -->
+        <module name="EmptyForIteratorPad"/>
+        <module name="GenericWhitespace"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+
+	<!-- Coding -->
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="UnnecessaryParentheses"/>
+
+        <!-- Suppress warnings for Lombok generated code -->
+        <module name="SuppressWarningsHolder"/>
+
+        <!-- Allow TODO comments but warn -->
+        <module name="TodoComment">
+            <property name="severity" value="info"/>
+            <property name="format" value="(TODO)|(FIXME)"/>
+        </module>
+
+        <!-- Size violations -->
+        <module name="MethodLength">
+            <property name="max" value="150"/>
+        </module>
+
+        <module name="ParameterNumber">
+            <property name="max" value="7"/>
+        </module>
+
+        <!-- Documentation -->
+        <module name="JavadocType"/>
+        <module name="JavadocVariable"/>
+        <module name="InvalidJavadocPosition"/>
+        <module name="JavadocMethod">
+            <property name="accessModifiers" value="public, protected"/>
+            <property name="allowMissingParamTags" value="false"/>
+            <property name="allowMissingReturnTag" value="false"/>
+        </module>
+
+        <module name="JavadocStyle">
+            <property name="checkEmptyJavadoc" value="true"/>
+        </module>
+
+        <!-- Other best practices -->
+        <module name="FinalClass"/>
+        <module name="EqualsHashCode"/>
+        <module name="NeedBraces"/>
+    </module>
+
+    <!-- Suppression for Lombok generated code -->
+    <module name="SuppressWarningsFilter"/>
+
+    <!-- New line at end of file -->
+    <module name="NewlineAtEndOfFile">
+        <property name="lineSeparator" value="lf"/>
+    </module>
+
+</module>
+

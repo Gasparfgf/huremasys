@@ -27,6 +27,8 @@
 
 
   	<properties>
+    	<checkstyle.version>9.3</checkstyle.version>
+    	<checkstyle-plugin.version>3.4.0</checkstyle-plugin.version>
     	<jakartaee.version>10.0.0</jakartaee.version>
     	<jakartaapi.version>3.1.0</jakartaapi.version>
     	<junit.version>5.11.2</junit.version>
@@ -151,6 +153,39 @@
 	        	<version>3.0.0-M5</version>
 	      	</plugin>
 
+    		<!-- Maven Checkstyle Plugin -->
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-checkstyle-plugin</artifactId>
+			    <version>${checkstyle-plugin.version}</version>
+			    <dependencies>
+			    	<dependency>
+			    		<groupId>com.puppycrawl.tools</groupId>
+			    		<artifactId>checkstyle</artifactId>
+			    		<version>${checkstyle.version}</version>
+			    	</dependency>
+			    </dependencies>
+			    <executions>
+			        <execution>
+			            <id>validate</id>
+			            <phase>validate</phase>
+			            <goals>
+			                <goal>check</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			    <configuration>
+			        <!-- Using the file -->
+			        <configLocation>checkstyle/checkstyle.xml</configLocation>
+                	<suppressionsLocation>checkstyle/checkstyle-suppressions.xml</suppressionsLocation>
+			        <encoding>UTF-8</encoding>
+			        <consoleOutput>true</consoleOutput>
+			        <failsOnError>true</failsOnError>
+                	<failOnViolation>false</failOnViolation>
+			        <violationSeverity>warning</violationSeverity>
+			    </configuration>
+			</plugin>
+
     	</plugins>
     
     	<sourceDirectory>src/main/java</sourceDirectory>
@@ -167,4 +202,21 @@
         
     	<finalName>huremasys-backend</finalName>
   	</build>
+
+	<reporting>
+	    <plugins>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-checkstyle-plugin</artifactId>
+	            <version>${maven-checkstyle-plugin.version}</version>
+	            <reportSets>
+	                <reportSet>
+	                    <reports>
+	                        <report>checkstyle</report>
+	                    </reports>
+	                </reportSet>
+	            </reportSets>
+	        </plugin>
+	    </plugins>
+	</reporting>
 </project>
