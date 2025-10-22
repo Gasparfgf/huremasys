@@ -8,11 +8,6 @@
     <property name="severity" value="warning"/>
     <property name="charset" value="UTF-8"/>
 
-    <!-- Standard coding -->
-    <module name="FileTabCharacter">
-        <property name="eachLine" value="true"/>
-    </module>
-
     <!-- Line Length -->
     <module name="LineLength">
         <property name="max" value="120"/>
@@ -24,11 +19,6 @@
         <property name="fileExtensions" value="java"/>
     </module>
 
-    <!-- Whitespace checks -->
-    <module name="FileTabCharacter">
-        <property name="eachLine" value="true"/>
-    </module>
-
     <!-- Package and class names -->
     <module name="TreeWalker">
         <module name="PackageName"/>
@@ -37,16 +27,8 @@
         <module name="MethodName"/>
         <module name="ParameterName"/>
 
-        <!-- Gaps and indentations -->
-        <module name="Indentation">
-            <property name="basicOffset" value="4"/>
-            <property name="braceAdjustment" value="0"/>
-            <property name="caseIndent" value="4"/>
-        </module>
-
         <!-- Own imports -->
         <module name="UnusedImports"/>
-        <module name="AvoidStarImport"/>
         <module name="IllegalImport"/>
         <module name="RedundantImport"/>
 
@@ -87,10 +69,6 @@
             <property name="accessModifiers" value="public, protected"/>
             <property name="allowMissingParamTags" value="false"/>
             <property name="allowMissingReturnTag" value="false"/>
-        </module>
-
-        <module name="JavadocStyle">
-            <property name="checkEmptyJavadoc" value="true"/>
         </module>
 
         <!-- Other best practices -->

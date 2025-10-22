@@ -11,53 +11,43 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
- * 
+ * User table.
  */
+@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "users")
 public class User {
+	/**
+	 * User id.
+	 * */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+	/**
+	 * User name.
+	 * */
     @Column(nullable = false, unique = true)
     private String username;
-    
+
+	/**
+	 * User password.
+	 * */
     @Column(nullable = false)
     private String password;
-    
+
+	/**
+	 * User role.
+	 * */
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
-
-    public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
-	public Long getId() {
-		return id;
-	}
 
 }

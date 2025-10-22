@@ -14,7 +14,9 @@ public class SwaggerUIServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String path = req.getPathInfo();
-        if (path == null || path.equals("/")) path = "/index.html";
+        if (path == null || path.equals("/")) {
+        	path = "/index.html";
+        }
 
         Path file = Paths.get(getServletContext().getRealPath("/swagger-ui" + path));
 
