@@ -35,6 +35,9 @@ Huremasys aims to offer a simple, powerful, and secure solution for:
 
 ```java
 huremasys/
+├── .github/
+│    └── workflows/
+│         └── ci.yml
 │
 ├── huremasys-backend/ # Code source Java Jakarta EE
 │ ├── src/
@@ -57,15 +60,16 @@ huremasys/
 
 ## ⚙️ Installation & Configuration
 
-### 🔧 Prérequis
+### 🔧 Prerequisites
 
-- [Java JDK 21](https://www.oracle.com/java/technologies/downloads/)
+- [Java JDK 17](https://www.oracle.com/java/technologies/downloads/)
 - [Maven 3.9+](https://maven.apache.org/)
 - [Docker & Docker Compose](https://www.docker.com/)
 - An IDE. **Exemple**: [Eclipse IDE for Enterprise Java Developers or another IDE](https://eclipse.org/downloads/)
 - [Payara Server 6 installed (payara/ folder at the root of the project)](https://payara.fish/downloads/payara-platform-community-edition/)
+- [Swagger-UI-v5.29.5 (2025-10-17)](https://github.com/swagger-api/swagger-ui/releases)
 
-### 🐘 Démarrer la base de données PostgreSQL
+### 🐘 Start the PostgreSQL database
 
 ```bash
 docker-compose up -d
@@ -106,6 +110,8 @@ Then deploy the .war to Jakarta EE application server.
 ./deploy-backend.sh	# from project root > bin
 ```
 
+> If you have problems with server, check this [document](https://github.com/Gasparfgf/huremasys/blob/main/huremasys-backend/doc/DEBUG.md) please !
+
 Once deployed:
 
 - Test endpoint: http://localhost:8080/huremasys/api/test
@@ -113,9 +119,12 @@ Once deployed:
 Expected result :
 > { "status": "ok" }
 
-- Swagger / OpenAPI (coming soon) : http://localhost:8080/huremasys/api/openapi.json
+### Swagger / OpenAPI
 
-> If you have problems with server, check this [document](https://github.com/Gasparfgf/huremasys/blob/main/huremasys-backend/doc/debug.md) please !
+Interactive API documentation is available via MicroProfile OpenAPI, integrated with Payara.
+
+- [JSON specification](http://localhost:8080/huremasys-backend/api/openapi)
+- [Swagger UI](http://localhost:8080/huremasys-backend/api/swagger-ui)
 
 ---
 
@@ -140,11 +149,11 @@ Swagger UI (OpenAPI 3) will be available at: http://localhost:8080/huremasys/swa
 
 ## 🧑‍💻 Auteur
 
-💼 Name : [Gaspar da Rosa Francisco](https://www.linkedin.com/in/gaspar-francisco-5a4639203/)
+💼 **Name** : Gaspar da Rosa Francisco
 
-🎓 Profile : Software engineer — Full Stack Developer
+🎓 **Profile** : [Software engineer — Full Stack Developer](https://www.linkedin.com/in/gaspar-francisco-5a4639203/)
 
-🔗 GitHub : [Gasparfgf](https://github.com/Gasparfgf)
+🔗 **GitHub** : [Gasparfgf](https://github.com/Gasparfgf)
 
 
 ---
