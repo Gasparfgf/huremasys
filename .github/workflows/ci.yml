@@ -36,38 +36,3 @@ jobs:
           name: huremasys-backend-war
           path: ./huremasys-backend/target/huremasys-backend.war
 
-  # Deployment
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    name: Deploy to Payara Server
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
-
-    steps:
-      - name: Download WAR artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: huremasys-backend-war
-
-      # Configuration via GitHub Secrets
-      - name: Deploy WAR to Payara
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-      - name: Deploy WAR to Remote Payara
-        run: |
-          echo "Connecting to ${{ secrets.SERVER_HOST }}..."
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
-            echo 'Stopping Payara domain...'
-            ${PAYARA_PATH}/bin/asadmin stop-domain || true
-            echo 'Deploying new version...'
-            rm -f ${PAYARA_PATH}/glassfish/domains/domain1/autodeploy/huremasys-backend.war
-            cp /tmp/huremasys-backend.war ${PAYARA_PATH}/glassfish/domains/domain1/autodeploy/
-            echo 'Starting Payara domain...'
-            ${PAYARA_PATH}/bin/asadmin start-domain
-          "
-        env:
-          PAYARA_USER: ${{ secrets.PAYARA_USER }}
-          PAYARA_PASS: ${{ secrets.PAYARA_PASS }}
-
