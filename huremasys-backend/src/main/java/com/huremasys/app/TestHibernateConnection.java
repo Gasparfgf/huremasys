@@ -8,7 +8,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 /**
- * 
+ * Test the connexion to the database.
  */
 public class TestHibernateConnection {
 
