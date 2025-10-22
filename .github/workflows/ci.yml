@@ -1,0 +1,38 @@
+name: Build & Deploy Huremasys Backend
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Test Backend
+
+    steps:
+      # 1. Checkout du code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Java
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # 3. Build & Test
+      - name: Build with Maven
+        working-directory: ./huremasys-backend
+        run: mvn -B clean package
+
+      # 4. Save the artifact (.war)
+      - name: Upload WAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: huremasys-backend-war
+          path: ./huremasys-backend/target/huremasys-backend.war
+

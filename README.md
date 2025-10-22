@@ -35,6 +35,9 @@ Huremasys aims to offer a simple, powerful, and secure solution for:
 
 ```java
 huremasys/
+├── .github/
+│    └── workflows/
+│         └── ci.yml
 │
 ├── huremasys-backend/ # Code source Java Jakarta EE
 │ ├── src/
