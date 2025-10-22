@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+    "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <!-- Suppress checks for generated code -->
+    <suppress checks=".*" files=".*[\\/]target[\\/].*"/>
+    <suppress checks=".*" files=".*[\\/]generated-sources[\\/].*"/>
+
+    <!-- Suppress checks for test files -->
+    <suppress checks="JavadocMethod" files=".*Test\.java$"/>
+    <suppress checks="MagicNumber" files=".*Test\.java$"/>
+    <suppress checks="MethodLength" files=".*Test\.java$"/>
+
+    <!-- Suppress checks for configuration classes -->
+    <suppress checks="HideUtilityClassConstructor" files=".*Config\.java$"/>
+    <suppress checks="HideUtilityClassConstructor" files=".*Configuration\.java$"/>
+
+</suppressions>
