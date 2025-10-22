@@ -52,10 +52,12 @@ jobs:
           cache: 'maven'
 
       - name: Run Checkstyle
+        working-directory: ./huremasys-backend
         run: mvn checkstyle:check
 
       - name: Generate Checkstyle report
         if: always()
+        working-directory: ./huremasys-backend
         run: mvn checkstyle:checkstyle
 
       - name: Upload Checkstyle report
