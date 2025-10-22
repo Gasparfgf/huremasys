@@ -132,6 +132,15 @@ Interactive API documentation is available via MicroProfile OpenAPI, integrated 
 - [JSON specification](http://localhost:8080/huremasys-backend/api/openapi)
 - [Swagger UI](http://localhost:8080/huremasys-backend/api/swagger-ui)
 
+### Code Quality
+
+This project uses **Checkstyle** to enforce code quality and Java style conventions.
+
+Run locally:
+```bash
+mvn checkstyle:check
+```
+
 ---
 
 ## Planned modules
